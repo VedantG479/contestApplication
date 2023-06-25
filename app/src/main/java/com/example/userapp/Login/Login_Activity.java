@@ -76,12 +76,4 @@ public class Login_Activity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(auth.getCurrentUser()!=null){
-            Intent intent = new Intent(Login_Activity.this, MainActivity.class);
-        }
-    }
 }
