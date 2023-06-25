@@ -9,6 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.userapp.Login.Login_Activity;
@@ -16,6 +20,7 @@ import com.example.userapp.Login.Register_Activity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout navDrawer;
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle toggle;
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,27 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        header = navView.getHeaderView(0);
+        if(user!=null){
+            ImageView usrImage = header.findViewById(R.id.userProfilePic);
+            Picasso.get().load(user.getPhotoUrl()).placeholder(getDrawable(R.drawable.user)).into(usrImage);
+
+            TextView usrName = header.findViewById(R.id.userName);
+            usrName.setText(user.getDisplayName());
+
+            TextView usrEmail = header.findViewById(R.id.userEmail);
+            usrEmail.setText(user.getEmail());
+
+            Button logout = header.findViewById(R.id.logoutBtn);
+            logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    auth.signOut();
+                    startActivity(new Intent(MainActivity.this,Login_Activity.class));
+                    finish();
+                }
+            });
+        }
     }
 
     @Override

@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/navView"
         app:menu="@menu/menu_file"
+        app:headerLayout="@layout/drawer_header_file"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
     <LinearLayout
