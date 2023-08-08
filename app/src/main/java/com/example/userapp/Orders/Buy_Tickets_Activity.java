@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.userapp.Tickets.Match_Data;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.razorpay.PaymentResultListener;
 
 import com.example.userapp.R;
@@ -30,11 +33,16 @@ public class Buy_Tickets_Activity extends AppCompatActivity implements PaymentRe
     private FirebaseAuth auth;
     private FirebaseUser user;
 
+    private DatabaseReference reference1,reference2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_tickets);
         Checkout.preload(getApplicationContext());
+
+        reference1= FirebaseDatabase.getInstance().getReference().child("Orders");
+        reference2= FirebaseDatabase.getInstance().getReference().child("TotalOrders");
 
         //uploadDate=itemView.findViewById(R.id.uploadDate);
         //uploadTime=itemView.findViewById(R.id.uploadTime);
@@ -79,7 +87,7 @@ public class Buy_Tickets_Activity extends AppCompatActivity implements PaymentRe
 
         payBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)  {
                 makePayment();
             }
         });
@@ -131,10 +139,21 @@ public class Buy_Tickets_Activity extends AppCompatActivity implements PaymentRe
     @Override
     public void onPaymentSuccess(String s) {
         Toast.makeText(Buy_Tickets_Activity.this,"Payment Successful",Toast.LENGTH_SHORT).show();
+        saveOrder();
     }
 
     @Override
     public void onPaymentError(int i, String s) {
         Toast.makeText(Buy_Tickets_Activity.this,"Payment Failed",Toast.LENGTH_SHORT).show();
+    }
+
+    public void saveOrder(){
+        //    private String uploadDate,uploadTime,referID,matchCharge,slots,matchTime,matchDate,imageUrl,matchDuration,matchCategory,room_Id,room_pass,reward;
+        //    private String vid,name,p1ID,p2ID,p3ID,p4ID,P1N,P2N,P3N,P4N,ref_no;
+        Match_Data match_data = new Match_Data("","",ref_no,Price,"",MTime,MDate,URI,"",MCategory,RID,RP,Reward);
+        reference1.child(user.getUid()).child(ref_no).setValue(match_data);
+
+        Choose_Squad_Data choose_squad_data = new Choose_Squad_Data(user.getUid(),user.getDisplayName(),"","","","","","","","",ref_no);
+        reference2.child(ref_no).child(user.getUid()).setValue(choose_squad_data);
     }
 }

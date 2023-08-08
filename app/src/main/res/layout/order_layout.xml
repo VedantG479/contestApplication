@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:id="@+id/mTickets"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp"
+        android:layout_margin="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="150dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.555">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginLeft="-15dp"
+                    android:src="@drawable/pubg_name" />
+                <TextView
+                    android:id="@+id/matchCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:text="ERANGEL"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
+                    android:textColor="#3484F0"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/RoomId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Room ID: "
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="#7E7E7E"
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/RoomPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Room Password: "
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="#7E7E7E"
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/referenceID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ref. No."
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="#7E7E7E"
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/matchDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Date: "
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="@color/black"
+                    android:textSize="11dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/matchTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time: "
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="@color/black"
+                    android:textSize="11dp"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_height="30dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:gravity="center"
+                        android:src="@drawable/trophy_icon"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        android:id="@+id/reward"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:text="Reward: "
+                        android:textColor="#3483f0"
+                        android:textSize="16dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/Price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price: "
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="#7E7E7E"
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:src="@drawable/cart"
+                android:id="@+id/ticketImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose Squad"
+            android:id="@+id/chooseSquadBtn"
+            android:backgroundTint="#4CAF50"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove"
+            android:id="@+id/removeBtn"
+            android:backgroundTint="#d81212"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
