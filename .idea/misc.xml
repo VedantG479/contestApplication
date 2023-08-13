@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/button_design.xml" value="0.141" />
         <entry key="app/src/main/res/layout/activity_buy_tickets.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/layout/activity_choose_squad.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/activity_forgot.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
