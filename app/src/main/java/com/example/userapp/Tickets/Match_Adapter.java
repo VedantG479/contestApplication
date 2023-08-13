@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -14,6 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.userapp.Orders.Buy_Tickets_Activity;
 import com.example.userapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 import com.squareup.picasso.Picasso;
 
@@ -54,20 +62,39 @@ public class  Match_Adapter extends RecyclerView.Adapter<Match_Adapter.matchView
 
         Picasso.get().load(currentItem.getImageUrl()).into(holder.ticketImage);
 
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Orders");
+        FirebaseAuth  auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+
         holder.mTickets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Buy_Tickets_Activity.class);
-                intent.putExtra("MDate",currentItem.getMatchDate());
-                intent.putExtra("MTime",currentItem.getMatchTime());
-                intent.putExtra("MCategory",currentItem.getMatchCategory());
-                intent.putExtra("Price",currentItem.getMatchCharge());
-                intent.putExtra("RID",currentItem.getRoom_Id());
-                intent.putExtra("RP",currentItem.getRoom_pass());
-                intent.putExtra("ref_no",currentItem.getReferID());
-                intent.putExtra("Reward",currentItem.getReward());
-                intent.putExtra("URI",currentItem.getImageUrl());
-                context.startActivity(intent);
+                reference.child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(!snapshot.hasChild(currentItem.getReferID())){
+                            Intent intent = new Intent(v.getContext(), Buy_Tickets_Activity.class);
+                            intent.putExtra("MDate",currentItem.getMatchDate());
+                            intent.putExtra("MTime",currentItem.getMatchTime());
+                            intent.putExtra("MCategory",currentItem.getMatchCategory());
+                            intent.putExtra("Price",currentItem.getMatchCharge());
+                            intent.putExtra("RID",currentItem.getRoom_Id());
+                            intent.putExtra("RP",currentItem.getRoom_pass());
+                            intent.putExtra("ref_no",currentItem.getReferID());
+                            intent.putExtra("Reward",currentItem.getReward());
+                            intent.putExtra("URI",currentItem.getImageUrl());
+                            context.startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(context, "You have already purchased this ticket", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

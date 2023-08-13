@@ -74,13 +74,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.profile:
-                        Toast.makeText(MainActivity.this,"Profile",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,Profile_Activity.class));
                         break;
                     case R.id.my_Orders:
-                        Toast.makeText(MainActivity.this,"My Orders",Toast.LENGTH_SHORT).show();
+                        My_Orders_Fragment my_orders_fragment = new My_Orders_Fragment();
+                        fragmentManager.beginTransaction().replace(R.id.frame_layout,my_orders_fragment).addToBackStack("home").commit();
                         break;
                     case R.id.help:
-                        Toast.makeText(MainActivity.this,"Help",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"aikyamhq@gmail.com"});
+                        intent.setType("text/plain");
+                        intent.setPackage("com.google.android.gm");
+                        startActivity(intent);
                         break;
                 }
                 return true;
