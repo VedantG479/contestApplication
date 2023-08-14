@@ -6,14 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp"
     android:gravity="center_horizontal"
-    android:background="@color/teal_200"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".Profile_Activity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:civ_border_width="3dp"
+        app:civ_border_width="1dp"
         android:src="@drawable/user"
         app:civ_border_color="@color/black"
         android:id="@+id/profileImage"/>
@@ -21,12 +21,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profileName"
-        android:text="Profile Name"
+        android:layout_marginTop="10dp"
+        android:hint="Profile Name"
+        android:textColorHint="#7E7E7E"
+        android:textColor="#7E7E7E"
+        android:textStyle="italic"
+        android:backgroundTint="#7E7E7E"
+        android:fontFamily="@font/sanfro"
         android:gravity="center"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:backgroundTint="@color/black"
         android:id="@+id/updateBtn"/>
 

@@ -33,7 +33,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Register"
-                    android:textSize="30dp"
+                    android:textSize="35dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:gravity="center"
                     android:textColor="@color/white"/>
                 <EditText
@@ -42,6 +44,10 @@
                     android:padding="10dp"
                     android:id="@+id/registerName"
                     android:hint="Name"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
+                    android:textColorHint="#7E7E7E"
+                    android:gravity="center"
                     android:background="@color/white"
                     android:layout_margin="10dp"
                     android:textColor="@color/black"/>
@@ -51,6 +57,10 @@
                     android:padding="10dp"
                     android:id="@+id/registerEmail"
                     android:hint="Email"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
+                    android:textColorHint="#7E7E7E"
+                    android:gravity="center"
                     android:background="@color/white"
                     android:layout_margin="10dp"
                     android:textColor="@color/black"/>
@@ -60,6 +70,10 @@
                     android:padding="10dp"
                     android:id="@+id/registerPassword"
                     android:hint="Password"
+                    android:textColorHint="#7E7E7E"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
                     android:inputType="textPassword"
                     android:background="@color/white"
                     android:layout_margin="10dp"
@@ -69,11 +83,16 @@
                     android:layout_height="wrap_content"
                     android:text="Register"
                     android:id="@+id/registerBtn"
+                    android:textStyle="bold"
+                    android:layout_marginTop="25dp"
+                    android:textSize="18dp"
                     android:backgroundTint="#2196F3"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Login"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:textColor="@color/white"
                     android:layout_margin="5dp"
                     android:id="@+id/loginTxtbox"/>

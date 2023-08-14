@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/navDrawer"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <com.google.android.material.navigation.NavigationView
@@ -15,26 +16,38 @@
         app:headerLayout="@layout/drawer_header_file"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="140dp"
             android:id="@+id/toolbar"
+            android:background="@color/black"
             style="@style/Widget.AppCompat.ActionBar">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="-25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/logo"/>
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="BGMI User App"
-                    android:gravity="center"
+                    android:text="Aikyam"
+                    android:layout_gravity="center"
                     android:textSize="30dp"
-                    android:textColor="@color/black"
+                    android:layout_marginLeft="-25dp"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/sanfro"
+                    android:textColor="@color/white"
                     android:textStyle="bold"/>
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -51,61 +64,92 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginVertical="20dp"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="100dp"
+                    android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/morningCard"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="10dp">
+                        app:cardBackgroundColor="#EEEEEE"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:src="@drawable/ic_morning"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/darker_gray"/>
-                            <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="80dp"
                                 android:layout_height="match_parent"
-                                android:text="Morning Matches"
-                                android:gravity="center"
-                                android:textColor="@color/black"/>
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/ic_morning"/>
+                            <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                                <View
+                                    android:layout_width="220dp"
+                                    android:layout_height="3dp"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_marginLeft="70dp"
+                                    android:background="#3484F0"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Morning Matches"
+                                    android:fontFamily="@font/sanfro"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="140dp"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/afternoonCard"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="10dp">
+                        app:cardBackgroundColor="#EEEEEE"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:padding="10dp"
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
                                 android:src="@drawable/ic_noon"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/darker_gray"/>
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Afternoon Matches"
-                                android:gravity="center"
-                                android:textColor="@color/black"/>
+                                android:orientation="vertical">
+                                <View
+                                    android:layout_width="220dp"
+                                    android:layout_height="3dp"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_marginLeft="70dp"
+                                    android:background="#3484F0"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Afternoon Matches"
+                                    android:fontFamily="@font/sanfro"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="130dp"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
@@ -113,63 +157,97 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginVertical="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/eveningCard"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="10dp">
+                        app:cardBackgroundColor="#EEEEEE"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
                                 android:src="@drawable/ic_evening"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/darker_gray"/>
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Evening Matches"
-                                android:gravity="center"
-                                android:textColor="@color/black"/>
+                                android:orientation="vertical">
+                                <View
+                                    android:layout_width="220dp"
+                                    android:layout_height="3dp"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_marginLeft="70dp"
+                                    android:background="#3484F0"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Evening Matches"
+                                    android:fontFamily="@font/sanfro"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginLeft="150dp"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="5dp"
                         android:id="@+id/my_OrdersCard"
-                        app:cardCornerRadius="5dp"
-                        app:cardElevation="10dp">
-                        <LinearLayout
+                        android:layout_width="390dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="25dp"
+                        app:cardBackgroundColor="@color/black"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/deleteCard">
+
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:padding="16dp"
-                                android:src="@drawable/cart"/>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@android:color/darker_gray"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="My Orders"
-                                android:gravity="center"
-                                android:textColor="@color/black"/>
-                        </LinearLayout>
+                            android:fontFamily="@font/sanfro"
+                            android:gravity="center"
+                            android:text="View Cart >"
+                            android:textColor="#3484F0"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
                     </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="200dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:fontFamily="@font/sanfro"
+                        android:text="Made with ❤️"
+                        android:textColor="#7E7E7E"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sanfro"
+                        android:text="ESports Technologies️"
+                        android:textColor="#7E7E7E"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="-7dp" />
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>

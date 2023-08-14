@@ -28,8 +28,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Forgot Password"
-                    android:textSize="30dp"
+                    android:textSize="35dp"
                     android:gravity="center"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:textColor="@color/white"/>
                 <EditText
                     android:layout_width="match_parent"
@@ -38,25 +40,36 @@
                     android:id="@+id/forgotEmail"
                     android:hint="Email"
                     android:background="@color/white"
+                    android:textColorHint="#7E7E7E"
                     android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
+                    android:gravity="center"
                     android:textColor="@color/black"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Submit "
                     android:id="@+id/submitBtn"
+                    android:textStyle="bold"
+                    android:layout_marginTop="25dp"
+                    android:textSize="18dp"
                     android:backgroundTint="#2196F3"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Register"
                     android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:layout_margin="5dp"
                     android:id="@+id/registerTxtbox"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Login"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/sanfro"
                     android:textColor="@color/white"
                     android:layout_margin="5dp"
                     android:id="@+id/loginTxtbox"/>
